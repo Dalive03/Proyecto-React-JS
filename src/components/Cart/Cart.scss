@@ -1,0 +1,113 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.cart-container {
+  padding: $spacing-xxl;
+  background: $bg-color;
+  border-radius: $border-radius-lg;
+  max-width: 800px;
+  margin: $spacing-xl auto;
+  box-shadow: $shadow-md;
+  border: 1px solid $border-color;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg 0;
+  border-bottom: 1px solid $border-color;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.cart-item-title {
+  @include title-premium;
+  font-size: 1.25rem;
+}
+
+.cart-item-details {
+  color: $text-muted;
+}
+
+.btn-remove {
+  background: transparent;
+  color: $error-color;
+  border: 1px solid $error-color;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  transition: all $transition-normal;
+  font-weight: 500;
+
+  &:hover {
+    background: $error-color;
+    color: white;
+  }
+}
+
+.cart-summary {
+  margin-top: $spacing-xxl;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $spacing-lg;
+  padding-top: $spacing-lg;
+  border-top: 2px solid $border-color;
+}
+
+.cart-total {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $primary-color;
+}
+
+.cart-actions {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.btn-clear {
+  background: transparent;
+  border: 1px solid $text-muted;
+  color: $text-muted;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all $transition-normal;
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}
+
+.btn-checkout {
+  @include btn-primary;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: $spacing-xxl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+  
+  h2 {
+    @include title-premium;
+  }
+}
+
+.btn-return {
+  @include btn-primary;
+}

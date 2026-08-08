@@ -1,0 +1,72 @@
+@import './variables';
+
+// Mixin para Flexbox Centrado
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Mixin para Glassmorphism
+@mixin glass-effect($bg-opacity: 0.8, $blur: 12px) {
+  background: rgba(255, 255, 255, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+// Mixin para Media Queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (max-width: 640px) { @content; }
+  }
+  @if $breakpoint == 'md' {
+    @media (max-width: 768px) { @content; }
+  }
+  @if $breakpoint == 'lg' {
+    @media (max-width: 1024px) { @content; }
+  }
+}
+
+// Mixin para tipografía premium de títulos
+@mixin title-premium {
+  font-family: $font-serif;
+  color: $primary-color;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+// Mixin para botones primarios
+@mixin btn-primary {
+  background: $primary-color;
+  color: #fff;
+  border: none;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius-md;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition-normal;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+
+  &:hover {
+    background: lighten($primary-color, 15%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    background: $border-color;
+    color: $text-muted;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}

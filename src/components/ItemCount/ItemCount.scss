@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.item-count-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  width: 100%;
+  max-width: 300px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $surface-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  padding: $spacing-xs;
+}
+
+.controls button {
+  background: $bg-color;
+  border: 1px solid transparent;
+  color: $text-main;
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius-sm;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all $transition-fast;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover:not(:disabled) {
+    border-color: $border-color;
+    box-shadow: $shadow-sm;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.count-display {
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 40px;
+  text-align: center;
+}
+
+.btn-add {
+  @include btn-primary;
+  width: 100%;
+}

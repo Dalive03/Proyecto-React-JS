@@ -1,0 +1,89 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.checkout-container {
+  max-width: 600px;
+  margin: $spacing-xl auto;
+  padding: $spacing-xxl;
+  background: $bg-color;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  border: 1px solid $border-color;
+}
+
+.checkout-title {
+  @include title-premium;
+  font-size: 2rem;
+  margin-bottom: $spacing-xxl;
+  text-align: center;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  label {
+    font-weight: 500;
+    color: $text-muted;
+  }
+
+  input {
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    border: 1px solid $border-color;
+    background: $surface-color;
+    color: $text-main;
+    font-size: 1rem;
+    transition: all $transition-fast;
+    font-family: $font-sans;
+
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+  }
+}
+
+.btn-submit {
+  @include btn-primary;
+  margin-top: $spacing-md;
+  width: 100%;
+}
+
+.order-success {
+  text-align: center;
+  padding: $spacing-xxl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xl;
+  background: $bg-color;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  max-width: 600px;
+  margin: $spacing-xl auto;
+  
+  h2 {
+    @include title-premium;
+    font-size: 2rem;
+  }
+}
+
+.order-id {
+  background: $surface-color;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius-md;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $accent-color;
+  letter-spacing: 1px;
+  border: 1px dashed $border-color;
+}

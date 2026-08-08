@@ -1,0 +1,85 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  @include glass-effect(0.9, 15px);
+  padding: $spacing-md $spacing-xl;
+  transition: all $transition-normal;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  
+  span {
+    @include title-premium;
+    font-size: 1.75rem;
+    background: linear-gradient(135deg, $primary-color, $accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  gap: $spacing-xl;
+  align-items: center;
+  
+  @include respond-to('md') {
+    display: none;
+  }
+}
+
+.nav-link {
+  color: $text-muted;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color $transition-normal, transform $transition-fast;
+  position: relative;
+  font-family: $font-sans;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: $accent-color;
+    transition: width $transition-normal;
+    border-radius: 2px;
+  }
+
+  &:hover {
+    color: $primary-color;
+    transform: translateY(-1px);
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &.active {
+    color: $primary-color;
+    font-weight: 600;
+    &::after {
+      width: 100%;
+    }
+  }
+}

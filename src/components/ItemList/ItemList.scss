@@ -1,0 +1,8 @@
+@import '../../styles/variables';
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-xl;
+  padding: $spacing-lg 0;
+}
